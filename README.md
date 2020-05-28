@@ -1,0 +1,1 @@
+Roleta do Jogo Twister criado para jogar a partir do comando de voz "Jogar".
