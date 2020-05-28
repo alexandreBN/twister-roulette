@@ -51,6 +51,9 @@
 <body>
 	<h3 id="action">Jogar!</h3>
 	<h5>Após permitir o microfone fale 'jogar' para rodar a roleta</h4>
+	<audio id="audio" autoplay>
+		<source id="src">
+	</audio>
 	<script>
 		const roulette = {
 			keywords: [
@@ -118,7 +121,9 @@
 			document.body.style.backgroundColor = option.background;
 			document.querySelector("#action").innerText = action;
 
-			let audio = new Audio(`https://translate.google.com.vn/translate_tts?ie=UTF-8&q=${action}&tl=pt&client=tw-ob`)
+			let audio = document.querySelector("#audio");
+			let source = document.querySelector("#src");
+			source.src = `https://translate.google.com.vn/translate_tts?ie=UTF-8&q=${action}&tl=pt&client=tw-ob`;
 			audio.load();
 			audio.play();
 		}
